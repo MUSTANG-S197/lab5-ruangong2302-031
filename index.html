@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精品图书商城 | 实验3</title>
+    <link rel="stylesheet" href="css/lab5-软工2302-031-index.css">
+</head>
+<body>
+
+<!-- 登录弹窗 -->
+<div class="login-modal" id="loginModal">
+    <div class="login-box">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <div class="form-box login-form" id="loginForm">
+            <h3>用户登录</h3>
+            <div class="input-group">
+                <label>用户名：</label>
+                <input type="text" id="loginUser" placeholder="请输入用户名">
+            </div>
+            <div class="input-group">
+                <label>密码：</label>
+                <input type="password" id="loginPwd" placeholder="请输入密码">
+            </div>
+            <div class="msg" id="loginMsg"></div>
+            <button class="submit-btn" id="loginBtn">登 录</button>
+            <p class="toggle-text">没有账号？<a href="javascript:;" id="toReg">立即注册</a></p>
+        </div>
+        <div class="form-box register-form hidden" id="registerForm">
+            <h3>用户注册</h3>
+            <div class="input-group">
+                <label>用户名：</label>
+                <input type="text" id="regUser" placeholder="请设置用户名">
+            </div>
+            <div class="input-group">
+                <label>密码：</label>
+                <input type="password" id="regPwd" placeholder="请设置密码">
+            </div>
+            <div class="msg" id="regMsg"></div>
+            <button class="submit-btn" id="regBtn">注 册</button>
+            <p class="toggle-text">已有账号？<a href="javascript:;" id="toLogin">立即登录</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- 头部导航 -->
+<header class="site-header">
+    <div class="logo-container">
+        <img src="images/logo.png" alt="图书商城Logo" class="logo">
+    </div>
+    <nav class="main-nav">
+        <ul class="nav-list clearfix">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">图书分类</a></li>
+            <li><a href="#">热门推荐</a></li>
+            <li><a href="#">新书上市</a></li>
+            <li><a href="javascript:;" id="loginLink">登录/注册</a></li>
+            <li><span class="search-icon">🔍</span></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 主体 -->
+<div class="main-container clearfix">
+    <aside class="sidebar-left">
+        <h3 class="sidebar-title">图书分类</h3>
+        <ul class="category-list">
+            <li><a href="#">文学小说</a></li>
+            <li><a href="#">科学技术</a></li>
+            <li><a href="#">经济管理</a></li>
+            <li><a href="#">生活艺术</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="slider-box">
+            <div class="slider-list">
+                <div class="slider-item"><img src="images/book1.jpg" alt=""></div>
+                <div class="slider-item"><img src="images/book2.jpg" alt=""></div>
+                <div class="slider-item"><img src="images/book3.jpg" alt=""></div>
+            </div>
+        </div>
+
+        <h3 class="section-title">精选图书</h3>
+        <section class="book-gallery">
+            <div class="book-card-wrapper">
+                <div class="book-item">
+                    <div class="book-front">
+                        <img src="images/book1.jpg" alt="三体" class="book-cover">
+                    </div>
+                    <div class="book-back">
+                        <div class="back-title">三体（全集）</div>
+                        <div class="back-stars">★★★★★</div>
+                        <div class="back-price">¥ 89.00</div>
+                        <div class="back-desc">刘慈欣著，雨果奖得主。<br>人类文明与三体文明的<br>史诗级宇宙碰撞。</div>
+                        <button class="add-cart">🛒 加入购物车</button>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card-wrapper">
+                <div class="book-item">
+                    <div class="book-front">
+                        <img src="images/book2.jpg" alt="数据结构" class="book-cover">
+                    </div>
+                    <div class="book-back">
+                        <div class="back-title">数据结构</div>
+                        <div class="back-stars">★★★★☆</div>
+                        <div class="back-price">¥ 45.00</div>
+                        <div class="back-desc">严薇敏著，计算机系列<br>经典教材，高校必备<br>算法与数据基础。</div>
+                        <button class="add-cart">🛒 加入购物车</button>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card-wrapper">
+                <div class="book-item">
+                    <div class="book-front">
+                        <img src="images/book3.jpg" alt="第七天" class="book-cover">
+                    </div>
+                    <div class="book-back">
+                        <div class="back-title">第七天</div>
+                        <div class="back-stars">★★★★☆</div>
+                        <div class="back-price">¥ 38.00</div>
+                        <div class="back-desc">余华著，用荒诞与现实<br>交织的笔触，探寻生死<br>之间的人性温情。</div>
+                        <button class="add-cart">🛒 加入购物车</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommend-section">
+            <h3 class="section-title">热门推荐</h3>
+            <div class="carousel-3d-wrap">
+                <div class="carousel-3d-stage">
+                    <div class="carousel-3d-card">
+                        <img src="images/book1.jpg" class="card-img">
+                        <div class="card-info">
+                            <span class="card-title">计算机网络</span>
+                            <span class="card-price">¥55.00</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-card">
+                        <img src="images/book2.jpg" class="card-img">
+                        <div class="card-info">
+                            <span class="card-title">云计算技术及应用</span>
+                            <span class="card-price">¥69.80</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-card">
+                        <img src="images/book3.jpg" class="card-img">
+                        <div class="card-info">
+                            <span class="card-title">文化苦旅</span>
+                            <span class="card-price">¥42.00</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-card">
+                        <img src="images/book1.jpg" class="card-img">
+                        <div class="card-info">
+                            <span class="card-title">时间简史</span>
+                            <span class="card-price">¥35.00</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-card">
+                        <img src="images/book2.jpg" class="card-img">
+                        <div class="card-info">
+                            <span class="card-title">计算机组成原理</span>
+                            <span class="card-price">¥49.00</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-card">
+                        <img src="images/book3.jpg" class="card-img">
+                        <div class="card-info">
+                            <span class="card-title">生死疲劳</span>
+                            <span class="card-price">¥59.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-books-section">
+            <h3 class="section-title">新书上市</h3>
+            <table class="book-table">
+                <thead>
+                    <tr><th>书名</th><th>作者</th><th>价格</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>时间简史</td><td>霍金</td><td>¥35.00</td></tr>
+                    <tr><td>生死疲劳</td><td>莫言</td><td>¥59.00</td></tr>
+                    <tr><td>云计算技术及应用</td><td>李洪波</td><td>¥69.80</td></tr>
+                    <tr><td>计算机组成原理</td><td>唐朔飞</td><td>¥49.00</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="ad-container">
+            <img src="images/ad.jpg" alt="促销广告" class="ad-image">
+            <p class="ad-text">限时特惠：满200减50</p>
+        </div>
+    </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+    <div class="footer-social">
+        <div class="social-icon" title="微信">💬</div>
+        <div class="social-icon" title="微博">🌐</div>
+        <div class="social-icon" title="邮件">📧</div>
+        <div class="social-icon" title="GitHub">🐙</div>
+        <div class="social-icon" title="收藏">⭐</div>
+    </div>
+    <p class="footer-copy">© 2026 图书商城 版权所有 | 软工2302-031</p>
+    <div class="footer-links">
+        <a href="#">关于我们</a>
+        <a href="#">隐私政策</a>
+        <a href="#">联系客服</a>
+        <a href="#">意见反馈</a>
+    </div>
+</footer>
+
+<script>
+const loginModal = document.getElementById('loginModal');
+const loginLink  = document.getElementById('loginLink');
+const closeBtn   = document.getElementById('closeBtn');
+const loginForm  = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const toReg   = document.getElementById('toReg');
+const toLogin = document.getElementById('toLogin');
+
+loginLink.onclick = () => { loginModal.style.display = 'flex'; };
+closeBtn.onclick  = () => { loginModal.style.display = 'none'; };
+toReg.onclick   = () => { loginForm.classList.add('hidden'); registerForm.classList.remove('hidden'); };
+toLogin.onclick = () => { registerForm.classList.add('hidden'); loginForm.classList.remove('hidden'); };
+
+const regBtn = document.getElementById('regBtn');
+regBtn.onclick = () => {
+    const u = document.getElementById('regUser').value.trim();
+    const p = document.getElementById('regPwd').value.trim();
+    const msg = document.getElementById('regMsg');
+    if(!u||!p){ msg.innerText='用户名和密码不能为空！'; msg.style.color='red'; return; }
+    if(localStorage.getItem('bookUser')){ msg.innerText='该用户已注册！'; msg.style.color='red'; return; }
+    localStorage.setItem('bookUser', u);
+    localStorage.setItem('bookPwd', p);
+    msg.innerText='注册成功！正在跳转到登录...'; msg.style.color='green';
+    setTimeout(()=>{ toLogin.click(); }, 1000);
+};
+
+const loginBtn = document.getElementById('loginBtn');
+loginBtn.onclick = () => {
+    const u = document.getElementById('loginUser').value.trim();
+    const p = document.getElementById('loginPwd').value.trim();
+    const msg = document.getElementById('loginMsg');
+    if(!u||!p){ msg.innerText='请输入用户名和密码！'; msg.style.color='red'; return; }
+    const lu = localStorage.getItem('bookUser');
+    const lp = localStorage.getItem('bookPwd');
+    if(u===lu && p===lp){
+        msg.innerText='登录成功！'; msg.style.color='green';
+        setTimeout(()=>{ loginModal.style.display='none'; loginLink.innerText=`欢迎，${lu}`; }, 1000);
+    } else {
+        msg.innerText='用户名或密码错误！'; msg.style.color='red';
+    }
+};
+
+loginModal.onclick = (e) => { if(e.target===loginModal) loginModal.style.display='none'; };
+
+</script>
+</body>
+</html>
